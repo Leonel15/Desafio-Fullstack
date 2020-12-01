@@ -1,0 +1,32 @@
+<h2 class="content-block">Produtos</h2>
+
+
+<div style="display: flex; flex-direction: row;">
+  <dx-text-box placeholder="Nome" [(value)]="produtoAdd.nome"></dx-text-box>
+  <dx-text-box placeholder="Descrição" [(value)]="produtoAdd.descricao"></dx-text-box>
+  <dx-button [text]="'Adicionar Produto'" (onClick)="adicionaProduto()"></dx-button>
+  <dx-button [text]="'Limpar Lista'" (onClick)="apagarLista()"></dx-button>
+  <dx-button [text]="'Adicionar Refrigerantes'" (onClick)="addRefrigerantes()"></dx-button>
+</div>
+
+
+<dx-data-grid class="dx-card wide-card"
+  [dataSource]="dataSource"
+  [showBorders]="false"
+  [columnAutoWidth]="true"
+  [columnHidingEnabled]="true">
+
+  <dxi-column
+    dataField="id"
+    [width]="90">
+  </dxi-column>
+  <dxi-column
+    dataField="nome"
+    [width]="190"
+    caption="Nome">
+  </dxi-column>
+  <dxi-column
+    dataField="descricao"
+    caption="Descrição">
+  </dxi-column>
+</dx-data-grid>

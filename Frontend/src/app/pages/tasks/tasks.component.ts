@@ -37,7 +37,7 @@ export class TasksComponent {
       .subscribe(payload => this.dataSource = []);
   }
 
-  addRefrigerantes(): void {
+  addLista(): void {
     let url = 'produto/add-list';
     this.http.post(url, [
       {

@@ -4,15 +4,19 @@ import { LoginFormComponent, ResetPasswordFormComponent, CreateAccountFormCompon
 import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { TasksComponent } from './pages/tasks/tasks.component';
-import {DxButtonModule, DxDataGridModule, DxFormModule, DxTextBoxModule} from 'devextreme-angular';
-import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
+import { DxButtonModule, DxDataGridModule, DxFormModule, DxTextBoxModule } from 'devextreme-angular';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
+import { ListarComponent } from './pages/listar/listar.component';
 
 const routes: Routes = [
   {
-    path: 'tasks',
-    component: TasksComponent,
-    canActivate: [ AuthGuardService ]
+    path: 'produtos/cadastrar',
+    component: CadastrarComponent
+  },
+  {
+    path: 'produtos/listar',
+    component: ListarComponent
   },
   {
     path: 'profile',
@@ -54,7 +58,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule, DxButtonModule, DxTextBoxModule, HttpClientModule],
   providers: [AuthGuardService],
-  exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent]
+  exports: [RouterModule, CadastrarComponent, ListarComponent],
+  declarations: [HomeComponent, ProfileComponent, CadastrarComponent, ListarComponent]
 })
 export class AppRoutingModule { }

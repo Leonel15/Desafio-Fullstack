@@ -1,0 +1,28 @@
+<h2 class="content-block">Cadastrar</h2>
+
+
+<div class="content-block dx-card responsive-paddings">
+  <dx-form
+    [(formData)]="produtoAdd">
+
+    <dxi-item dataField="nome"
+              editorType="dxTextBox"
+              [editorOptions]="{ width: 250 }">
+      <dxo-label [text]="'Nome'"></dxo-label>
+    </dxi-item>
+
+    <dxi-item dataField="descricao"
+              editorType="dxTextBox"
+              [editorOptions]="{ width: 250 }">
+      <dxo-label [text]="'Descrição'"></dxo-label>
+    </dxi-item>
+  </dx-form>
+
+  <br />
+  <br />
+
+  <dx-button type="success"[icon]="'floppy'" [text]="'Adicionar'" (onClick)="adicionaProduto()"></dx-button>
+</div>
+
+
+

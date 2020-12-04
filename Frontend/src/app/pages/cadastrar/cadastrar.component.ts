@@ -15,7 +15,7 @@ export class CadastrarComponent {
   }
 
   adicionaProduto(): void {
-    let url = '/produto/add';
+    let url = '/api/produto/add';
     this.http.post(url, this.produtoAdd)
       .subscribe(payload => {
         this.produtoAdd = {nome: null, descricao: null};

@@ -16,7 +16,7 @@ export class ListarComponent {
   }
 
   getProdutos(): void {
-    let url = '/produto/list-all';
+    let url = '/api/produto/list-all';
     this.http.get(url)
       .subscribe(payload => {
         this.dataSource = payload;

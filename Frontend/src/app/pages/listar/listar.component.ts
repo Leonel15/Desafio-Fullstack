@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import 'devextreme/data/odata/store';
 import {HttpClient} from '@angular/common/http';
+import {Produto} from "../../model/produto";
 
 @Component({
   templateUrl: 'listar.component.html'
 })
 
 export class ListarComponent {
-  dataSource: any;
-  produtoAdd: {nome: string, descricao: string} = {nome: null, descricao: null};
+  dataSource;
+  produtoAdd: Produto = new Produto();
 
   constructor(private http: HttpClient) {
     this.getProdutos();
@@ -16,7 +17,7 @@ export class ListarComponent {
   }
 
   getProdutos(): void {
-    let url = '/produto/list-all';
+    let url = '/api/produto/list-all';
     this.http.get(url)
       .subscribe(payload => {
         this.dataSource = payload;

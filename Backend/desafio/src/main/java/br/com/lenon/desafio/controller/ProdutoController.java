@@ -16,13 +16,16 @@ public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;
 
+
     @PostMapping("/add")
     public void add(@RequestBody Produto produto) {
+
         produtoService.add(produto);
     }
 
     @PostMapping("/add-list")
     public void add(@RequestBody List<Produto> produtos) {
+
         produtoService.addList(produtos);
     }
 

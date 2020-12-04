@@ -2,18 +2,15 @@
 
 
 <div class="content-block dx-card responsive-paddings">
+
   <dx-form
     [(formData)]="produtoAdd">
 
-    <dxi-item dataField="nome"
-              editorType="dxTextBox"
-              [editorOptions]="{ width: 250 }">
+    <dxi-item dataField="nome" editorType="dxTextBox" [editorOptions]="{ width: 250 }">
       <dxo-label [text]="'Nome'"></dxo-label>
     </dxi-item>
 
-    <dxi-item dataField="descricao"
-              editorType="dxTextBox"
-              [editorOptions]="{ width: 250 }">
+    <dxi-item dataField="descricao" editorType="dxTextBox" [editorOptions]="{ width: 250 }">
       <dxo-label [text]="'Descrição'"></dxo-label>
     </dxi-item>
   </dx-form>

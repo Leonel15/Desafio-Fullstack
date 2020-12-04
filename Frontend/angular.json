@@ -58,8 +58,8 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-              "rxjs-compat",
-              "lodash"
+              "devextreme",
+              "devextreme-angular"
             ]
           },
           "configurations": {

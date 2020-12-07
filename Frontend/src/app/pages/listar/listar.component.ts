@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import 'devextreme/data/odata/store';
-import {HttpClient} from '@angular/common/http';
-import {Produto} from "../../model/produto";
+import { HttpClient } from '@angular/common/http';
+import { Produto } from "../../model/produto";
 
 @Component({
   templateUrl: 'listar.component.html'

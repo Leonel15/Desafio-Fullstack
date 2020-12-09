@@ -7,7 +7,7 @@ import {Produto} from "../../model/produto";
   templateUrl: 'cadastrar.component.html'
 })
 
-export class CadastrarComponent {
+export class  CadastrarComponent {
 
   produtoAdd: Produto = new Produto();
 

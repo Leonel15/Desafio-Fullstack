@@ -8,8 +8,14 @@ import { DxButtonModule, DxDataGridModule, DxFormModule, DxTextBoxModule } from 
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { ListarComponent } from './pages/listar/listar.component';
+import { ItensNotaComponent } from "./pages/itens-nota/itens-nota.component";
 
 const routes: Routes = [
+
+  {
+    path: 'nota-fiscal/add',
+    component: ItensNotaComponent
+  },
   {
     path: 'produtos/cadastrar',
     component: CadastrarComponent

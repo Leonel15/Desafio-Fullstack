@@ -1,0 +1,22 @@
+<h2 class="content-block">Cadastrar</h2>
+
+<dx-data-grid class="dx-card wide-card"
+
+              [showBorders]="false"
+              [columnAutoWidth]="true"
+              [columnHidingEnabled]="true">
+
+  <dxi-column
+    dataField="id"
+    [width]="90">
+  </dxi-column>
+  <dxi-column
+    dataField="nome"
+    [width]="190"
+    caption="Nome">
+  </dxi-column>
+  <dxi-column
+    dataField="descricao"
+    caption="Descrição">
+  </dxi-column>
+</dx-data-grid>

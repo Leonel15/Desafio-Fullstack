@@ -5,7 +5,6 @@ import br.com.lenon.desafio.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
@@ -44,10 +43,6 @@ public class ProdutoController {
         produtoService.truncate();
     }
 
-//    @GetMapping("/find-by-name/{nome}")
-//    public Produto findByName(@PathParam("nome") String nome) {
-//        return produtoService.findByName(nome);
-//    }
 }
 
 

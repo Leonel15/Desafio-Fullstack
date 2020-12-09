@@ -6,7 +6,7 @@ export const navigation = [
   },
   {
     text: 'Produtos',
-    icon: 'warning',
+    icon: 'floppy',
     items: [
       {
         text: 'Cadastrar',
@@ -17,5 +17,14 @@ export const navigation = [
         path: '/produtos/listar'
       }
     ]
+  },
+  {
+    text: 'Nota Fiscal',
+    icon: 'floppy',
+    items: [
+      {
+        text: 'Cadastrar - Listar',
+        path: '/nota-fiscal/add'
+      },    ]
   }
 ];

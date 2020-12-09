@@ -13,6 +13,7 @@ public class NotaFiscal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "numero_nota")
     private Long numero;
 
     private String fornecedor;
@@ -74,6 +75,13 @@ public class NotaFiscal {
     }
 
     public void setItens(List<Item> itens) {
+        if(itens!=null && !itens.isEmpty()){
+            itens.forEach( i -> {
+                if(i.getNota()==null){
+                    i.setNota(this);
+                }
+            });
+        }
         this.itens = itens;
     }
 }

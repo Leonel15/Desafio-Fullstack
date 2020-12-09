@@ -9,7 +9,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "nota")
     private NotaFiscal nota;
 
     private String item;
@@ -22,9 +23,9 @@ public class Item {
     }
 
     public Item(long id, String item, Float valor) {
-        this.id = id;
         this.item = item;
         this.valor = valor;
+        this.id = id;
     }
 
     public long getId() {

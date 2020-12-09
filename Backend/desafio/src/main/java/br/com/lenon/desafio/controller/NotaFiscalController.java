@@ -14,7 +14,10 @@ public class NotaFiscalController {
 
     @PostMapping("/add")
     public void add(@RequestBody NotaFiscal notaFiscal) {
+
         notaFiscalService.add(notaFiscal);
+
+        System.out.println(notaFiscal);
     }
 
 }

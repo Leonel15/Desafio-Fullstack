@@ -5,6 +5,8 @@ import br.com.lenon.desafio.service.NotaFiscalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/nota-fiscal")
 public class NotaFiscalController {
@@ -13,11 +15,19 @@ public class NotaFiscalController {
     private NotaFiscalService notaFiscalService;
 
     @PostMapping("/add")
-    public void add(@RequestBody NotaFiscal notaFiscal) {
+    public NotaFiscal add(@RequestBody NotaFiscal notaFiscal) {
+        return notaFiscalService.add(notaFiscal);
+    }
 
-        notaFiscalService.add(notaFiscal);
+    @GetMapping("/listar")
+    public List<NotaFiscal> listar() {
+        return notaFiscalService.listar();
+    }
 
-        System.out.println(notaFiscal);
+
+    @GetMapping("/{id}")
+    public NotaFiscal findById(@PathVariable("id") Long id) {
+        return notaFiscalService.findById(id);
     }
 
 }

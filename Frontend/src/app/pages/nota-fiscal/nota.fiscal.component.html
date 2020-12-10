@@ -1,0 +1,61 @@
+<h2 class="content-block">Cadastro de Nota Fiscal</h2>
+
+<div class="content-block dx-card responsive-paddings">
+  <dx-form
+    [(formData)]="model">
+
+    <dxi-item dataField="numero" editorType="dxNumberBox" [editorOptions]="{ width: 100 }">
+      <dxo-label [text]="'Número'"></dxo-label>
+    </dxi-item>
+
+    <dxi-item dataField="fornecedor" editorType="dxTextBox" [editorOptions]="{ width: 300 }">
+      <dxo-label [text]="'Fornecedor'"></dxo-label>
+    </dxi-item>
+
+    <dxi-item dataField="data" editorType="dxDateBox" [editorOptions]="{ displayFormat: 'dd/MM/yyyy', width: 150 }">
+      <dxo-label [text]="'Data'"></dxo-label>
+    </dxi-item>
+  </dx-form>
+
+  <br/><br/><br/>
+
+
+  <h5>Itens da nota fiscal</h5>
+  <br/>
+  <dx-data-grid class="dx-card wide-card"
+                [dataSource]="model.itens"
+                [showBorders]="true"
+                [columnAutoWidth]="true"
+                [columnHidingEnabled]="true">
+
+    <dxo-editing
+      [allowUpdating]="true"
+      [allowAdding]="true"
+      [allowDeleting]="true"
+      mode="row">
+    </dxo-editing>
+
+    <dxi-column
+      dataField="item"
+      caption="Nome">
+    </dxi-column>
+
+    <dxi-column
+      dataField="Valor"
+      [width]="150"
+      [dataType]="'number'"
+      caption="Valor">
+    </dxi-column>
+  </dx-data-grid>
+
+
+  <br/>
+  <div style="display: flex; justify-content: flex-end">
+    <dx-button type="success" [icon]="'floppy'" [text]="'Adicionar'" (onClick)="adicionaNotaFiscal()"></dx-button>
+  </div>
+
+
+</div>
+
+
+

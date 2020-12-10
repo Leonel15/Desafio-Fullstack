@@ -23,8 +23,13 @@ export const navigation = [
     icon: 'floppy',
     items: [
       {
-        text: 'Cadastrar - Listar',
+        text: 'Cadastrar',
         path: '/nota-fiscal/add'
-      },    ]
+      },
+      {
+        text: 'Listar',
+        path: '/nota-fiscal/listar'
+      },
+    ]
   }
 ];

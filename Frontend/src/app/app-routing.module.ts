@@ -5,16 +5,16 @@ import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DxButtonModule, DxDataGridModule, DxFormModule, DxTextBoxModule } from 'devextreme-angular';
-import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { ListarComponent } from './pages/listar/listar.component';
-import { ItensNotaComponent } from "./pages/itens-nota/itens-nota.component";
+import { NotaFiscalComponent } from './pages/nota-fiscal/nota.fiscal.component';
 
 const routes: Routes = [
 
   {
     path: 'nota-fiscal/add',
-    component: ItensNotaComponent
+    component: NotaFiscalComponent
   },
   {
     path: 'produtos/cadastrar',
@@ -64,7 +64,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule, DxButtonModule, DxTextBoxModule, HttpClientModule],
   providers: [AuthGuardService],
-  exports: [RouterModule, CadastrarComponent, ListarComponent],
-  declarations: [HomeComponent, ProfileComponent, CadastrarComponent, ListarComponent]
+  exports: [RouterModule, CadastrarComponent, ListarComponent, NotaFiscalComponent],
+  declarations: [HomeComponent, ProfileComponent, CadastrarComponent, ListarComponent, NotaFiscalComponent]
 })
 export class AppRoutingModule { }
